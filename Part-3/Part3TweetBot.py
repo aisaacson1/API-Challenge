@@ -1,8 +1,6 @@
 
 import os
 import sys
-get_ipython().run_line_magic('matplotlib', 'notebook')
-get_ipython().run_line_magic('matplotlib', 'inline')
 
 
 sys.path.insert(0, 'C:/Users/Aaron/Documents')
