@@ -21,12 +21,18 @@ east = timezone('US/Eastern')
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 analyzer = SentimentIntensityAnalyzer()
 
-# Twitter API Keys
-from config import TW_consumer_key2, TW_consumer_skey2, TW_access_token2, TW_access_stoken2
+consumer_key = os.environ.get("consumer_key")
+consumer_secret = os.environ.get("consumer_secret")
+access_token = os.environ.get("access_token")
+access_token_secret = os.environ.get("access_token_secret")
+weather_api_key = os.environ.get("weather_api_key")
+
+
+
 
 # # Setup Tweepy API Authentication
-auth = tweepy.OAuthHandler(TW_consumer_key2, TW_consumer_skey2)
-auth.set_access_token(TW_access_token2, TW_access_stoken2)
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth, parser=tweepy.parsers.JSONParser())
 
 
